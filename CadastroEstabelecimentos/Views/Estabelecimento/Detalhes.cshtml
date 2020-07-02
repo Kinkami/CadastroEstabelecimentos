@@ -1,0 +1,95 @@
+﻿@model CadastroEstabelecimentos.Models.Estabelecimento
+@{
+    ViewData["Title"] = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <dl class="list-group-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.NomeFantasia)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.CNPJ)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.CNPJ)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Email)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Endereco)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Cidade)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Estado)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Telefone)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Telefone)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDeCadastro)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.DataDeCadastro)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Categoria)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Status)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Status)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Agencia)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Agencia)
+        </dt>
+        <dt>
+            @Html.DisplayNameFor(model => model.Conta)
+        </dt>
+        <dt>
+            @Html.DisplayFor(model => model.Conta)
+        </dt>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a>
+    <a asp-action="Index">Voltar</a>
+</div>

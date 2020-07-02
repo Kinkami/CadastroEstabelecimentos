@@ -1,0 +1,113 @@
+﻿@model IEnumerable<CadastroEstabelecimentos.Models.Estabelecimento>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>Estabelecimentos</h4>
+<p>
+    @*<a asp-controller="Estabelecimento" asp-action="Cadastrar">Criar Novo Registro</a>*@
+
+    <a href="@Url.Action("Cadastrar", "Estabelecimento")">Criar Novo Registro</a>
+</p>
+<div class="row">
+    <div class="col-md-9">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.RazaoSocial)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.NomeFantasia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.CNPJ)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Email)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Endereco)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Cidade)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Estado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Telefone)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DataDeCadastro)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Categoria)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Status)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Agencia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Conta)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var estabelecimento in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.RazaoSocial)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.NomeFantasia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.CNPJ)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Email)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Endereco)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Cidade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Estado)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Telefone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.DataDeCadastro)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Categoria)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Status)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Agencia)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => estabelecimento.Conta)
+                        </td>
+                        <td>
+                            <a asp-action="Detalhes" asp-route-id="@estabelecimento.Id">Detalhes</a>
+                            <a asp-action="Editar" asp-route-id="@estabelecimento.Id">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@estabelecimento.Id">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+        </table>
+    </div>
+</div>
