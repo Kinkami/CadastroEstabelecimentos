@@ -54,7 +54,7 @@ namespace CadastroEstabelecimentos.Models
 
             using (SqlConnection conexao = new SqlConnection(stringDeConexao))
             {
-                SqlCommand comando = new SqlCommand("USP_BuscaTodosRegistros", conexao);
+                SqlCommand comando = new SqlCommand("USP_SelecionaEstabelecimentoPorId", conexao);
                 comando.CommandType = CommandType.StoredProcedure;
                 comando.Parameters.AddWithValue("@Id", Id);
                 conexao.Open();
@@ -91,15 +91,15 @@ namespace CadastroEstabelecimentos.Models
                 SqlCommand comando = new SqlCommand("USP_InsereNovoEstabelecimento", conexao);
                 comando.CommandType = CommandType.StoredProcedure;
 
-                comando.Parameters.AddWithValue("@RazaoSocial", novoRegistro.RazaoSocial);
-                comando.Parameters.AddWithValue("@NomeFantasia", novoRegistro.NomeFantasia);
+                comando.Parameters.AddWithValue("@Razao_Social", novoRegistro.RazaoSocial);
+                comando.Parameters.AddWithValue("@Nome_Fantasia", novoRegistro.NomeFantasia);
                 comando.Parameters.AddWithValue("@CNPJ", novoRegistro.CNPJ);
                 comando.Parameters.AddWithValue("@Email", novoRegistro.Email);
                 comando.Parameters.AddWithValue("@Endereço", novoRegistro.Endereco);
                 comando.Parameters.AddWithValue("@Cidade", novoRegistro.Cidade);
                 comando.Parameters.AddWithValue("@Estado", novoRegistro.Estado);
                 comando.Parameters.AddWithValue("@Telefone", novoRegistro.Telefone);
-                comando.Parameters.AddWithValue("@DataDeCadastro", novoRegistro.DataDeCadastro);
+                comando.Parameters.AddWithValue("@Data_De_Cadastro", novoRegistro.DataDeCadastro);
                 comando.Parameters.AddWithValue("@Categoria", novoRegistro.Categoria);
                 comando.Parameters.AddWithValue("@Status", novoRegistro.Status);
                 comando.Parameters.AddWithValue("@Agencia", novoRegistro.Agencia);
@@ -119,15 +119,15 @@ namespace CadastroEstabelecimentos.Models
                 comando.CommandType = CommandType.StoredProcedure;
 
                 comando.Parameters.AddWithValue("@Id", novoRegistro.Id);
-                comando.Parameters.AddWithValue("@RazaoSocial", novoRegistro.RazaoSocial);
-                comando.Parameters.AddWithValue("@NomeFantasia", novoRegistro.NomeFantasia);
+                comando.Parameters.AddWithValue("@Razao_Social", novoRegistro.RazaoSocial);
+                comando.Parameters.AddWithValue("@Nome_Fantasia", novoRegistro.NomeFantasia);
                 comando.Parameters.AddWithValue("@CNPJ", novoRegistro.CNPJ);
                 comando.Parameters.AddWithValue("@Email", novoRegistro.Email);
                 comando.Parameters.AddWithValue("@Endereço", novoRegistro.Endereco);
                 comando.Parameters.AddWithValue("@Cidade", novoRegistro.Cidade);
                 comando.Parameters.AddWithValue("@Estado", novoRegistro.Estado);
                 comando.Parameters.AddWithValue("@Telefone", novoRegistro.Telefone);
-                comando.Parameters.AddWithValue("@DataDeCadastro", novoRegistro.DataDeCadastro);
+                comando.Parameters.AddWithValue("@Data_De_Cadastro", novoRegistro.DataDeCadastro);
                 comando.Parameters.AddWithValue("@Categoria", novoRegistro.Categoria);
                 comando.Parameters.AddWithValue("@Status", novoRegistro.Status);
                 comando.Parameters.AddWithValue("@Agencia", novoRegistro.Agencia);

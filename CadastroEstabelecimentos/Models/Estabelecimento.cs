@@ -6,21 +6,23 @@ namespace CadastroEstabelecimentos.Models
 {
     public class Estabelecimento
     {
-        [Required]
+        [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "Razão Social")]
-
         public string RazaoSocial { get; set; }
+
 
         [Display(Name = "Nome Fantasia")]
         public string NomeFantasia { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Este campo é obrigatório")]
+        [StringLength(14,ErrorMessage ="CNPJ inválido!")]
+        
         public string CNPJ { get; set; }
 
-        [EmailAddress]
+        [EmailAddress(ErrorMessage ="Digite um email válido")]
         public string Email { get; set; }
 
         [Display(Name = "Endereço")]
@@ -30,9 +32,13 @@ namespace CadastroEstabelecimentos.Models
 
         public string Estado { get; set; }
 
+        [StringLength(11)]
+        [Phone]
         public string Telefone { get; set; }
 
         [Display(Name = "Data de Cadastro")]
+        [DataType(DataType.DateTime)]
+
         public DateTime DataDeCadastro { get; set; }
 
         public string Categoria { get; set; }
@@ -40,8 +46,10 @@ namespace CadastroEstabelecimentos.Models
         public string Status { get; set; }
 
         [Display(Name = "Agência")]
+        [StringLength(4)]
         public string Agencia { get; set; }
 
+        [StringLength(6)]
         public string Conta { get; set; }
 
     }

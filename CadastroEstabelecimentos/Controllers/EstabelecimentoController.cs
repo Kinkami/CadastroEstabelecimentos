@@ -33,6 +33,12 @@ namespace CadastroEstabelecimentos.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Cadastrar([Bind] Estabelecimento estabelecimento)
         {
+
+            if (estabelecimento.Categoria.Equals("Supermercado") && String.IsNullOrEmpty(estabelecimento.Telefone))
+            {
+                ModelState.AddModelError("Telefone", "O campo telefone é obrigatório!");
+            }
+
             if (ModelState.IsValid)
             {
                 estabelecimentoDAL.InsereNovo(estabelecimento);
@@ -44,6 +50,7 @@ namespace CadastroEstabelecimentos.Controllers
         [HttpGet]
         public IActionResult Editar(int? id)
         {
+
             if (id==null)
             {
                 return NotFound();
@@ -60,6 +67,11 @@ namespace CadastroEstabelecimentos.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Editar(int? id, [Bind] Estabelecimento registro)
         {
+            if (registro.Categoria.Equals("Supermercado") && String.IsNullOrEmpty(registro.Telefone))
+            {
+                ModelState.AddModelError("Telefone", "O campo telefone é obrigatório!");
+            }
+
             if (id == null)
             {
                 return NotFound();
