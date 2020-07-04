@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CadastroEstabelecimentos.Models
 {
     public class EstabelecimentoDAL
     {
-        readonly string stringDeConexao = "Data Source = DESKTOP-GI3C529; Initial Catalog = TesteFernando; User ID = AplicativoWeb; Password=B@nana01";
+        readonly string stringDeConexao = "Server=tcp:fernuvem.database.windows.net,1433;Initial Catalog=TesteFernando;Persist Security Info=False;User ID=dbaFernando;Password=B@nana00;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
         
         public IEnumerable<Estabelecimento> BuscarTodos()
         {
@@ -127,7 +125,6 @@ namespace CadastroEstabelecimentos.Models
                 comando.Parameters.AddWithValue("@Cidade", novoRegistro.Cidade);
                 comando.Parameters.AddWithValue("@Estado", novoRegistro.Estado);
                 comando.Parameters.AddWithValue("@Telefone", novoRegistro.Telefone);
-                comando.Parameters.AddWithValue("@Data_De_Cadastro", novoRegistro.DataDeCadastro);
                 comando.Parameters.AddWithValue("@Categoria", novoRegistro.Categoria);
                 comando.Parameters.AddWithValue("@Status", novoRegistro.Status);
                 comando.Parameters.AddWithValue("@Agencia", novoRegistro.Agencia);

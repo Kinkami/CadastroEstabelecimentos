@@ -18,8 +18,8 @@ namespace CadastroEstabelecimentos.Models
         public string NomeFantasia { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
-        [StringLength(14,ErrorMessage ="CNPJ inválido!")]
-        
+        [StringLength(20,ErrorMessage ="CNPJ inválido!")]
+        [RegularExpression(@"\d{2}.\d{3}.\d{3}.\d{4}.\d{2}", ErrorMessage=" Regex CNPJ inválido!")]
         public string CNPJ { get; set; }
 
         [EmailAddress(ErrorMessage ="Digite um email válido")]
@@ -32,13 +32,11 @@ namespace CadastroEstabelecimentos.Models
 
         public string Estado { get; set; }
 
-        [StringLength(11)]
-        [Phone]
+        [StringLength(20)]
         public string Telefone { get; set; }
 
         [Display(Name = "Data de Cadastro")]
-        [DataType(DataType.DateTime)]
-
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime DataDeCadastro { get; set; }
 
         public string Categoria { get; set; }
@@ -46,10 +44,10 @@ namespace CadastroEstabelecimentos.Models
         public string Status { get; set; }
 
         [Display(Name = "Agência")]
-        [StringLength(4)]
+        [StringLength(5)]
         public string Agencia { get; set; }
 
-        [StringLength(6)]
+        [StringLength(8)]
         public string Conta { get; set; }
 
     }

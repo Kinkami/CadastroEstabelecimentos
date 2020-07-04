@@ -1,18 +1,16 @@
 
-CREATE DATABASE [TesteFernando]
 
-USE [TesteFernando]
 
 CREATE TABLE [dbo].[Estabelecimento](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Razao_Social] [varchar](100) NOT NULL,
 	[Nome_Fantasia] [varchar](100) NULL,
-	[CNPJ] [varchar](13) NOT NULL,
+	[CNPJ] [varchar](20) NOT NULL,
 	[Email] [varchar](30) NULL,
 	[Endereço] [varchar](100) NULL,
 	[Cidade] [varchar](100) NULL,
 	[Estado] [varchar](50) NULL,
-	[Telefone] [varchar](10) NULL,
+	[Telefone] [varchar](20) NULL,
 	[Data_de_Cadastro] [datetime] NULL,
 	[Categoria] [varchar](100) NULL,
 	[Status] [varchar](30) NULL,
@@ -37,12 +35,12 @@ CREATE PROCEDURE USP_InsereNovoEstabelecimento
 (
  @Razao_Social VARCHAR(100)= ''
 ,@Nome_Fantasia VARCHAR(100)= ''
-,@CNPJ VARCHAR(13)= ''
+,@CNPJ VARCHAR(20)= ''
 ,@Email VARCHAR(30)= ''
 ,@Endereço VARCHAR(100)= ''
 ,@Cidade VARCHAR(100)= ''
 ,@Estado VARCHAR(50)= ''
-,@Telefone VARCHAR(10)= ''
+,@Telefone VARCHAR(20)= ''
 ,@Data_de_Cadastro DATETIME= ''
 ,@Categoria VARCHAR(100)= ''
 ,@Status VARCHAR(100)= ''
@@ -61,13 +59,12 @@ CREATE PROCEDURE USP_AtualizaEstabelecimento
  @Id int = 0
 ,@Razao_Social VARCHAR(100)= ''
 ,@Nome_Fantasia VARCHAR(100)= ''
-,@CNPJ VARCHAR(13)= ''
+,@CNPJ VARCHAR(20)= ''
 ,@Email VARCHAR(30)= ''
 ,@Endereço VARCHAR(100)= ''
 ,@Cidade VARCHAR(100)= ''
 ,@Estado VARCHAR(50)= ''
-,@Telefone VARCHAR(10)= ''
-,@Data_de_Cadastro DATETIME= ''
+,@Telefone VARCHAR(20)= ''
 ,@Categoria VARCHAR(100)= ''
 ,@Status VARCHAR(30)= ''
 ,@Agencia VARCHAR(10)= ''
@@ -84,7 +81,6 @@ UPDATE [TesteFernando].dbo.Estabelecimento SET
 ,Cidade = @Cidade
 ,Estado = @Estado
 ,Telefone = @Telefone
-,Data_de_Cadastro = @Data_de_Cadastro
 ,Categoria = @Categoria
 ,Status = @Status
 ,Agencia = @Agencia
